@@ -1,6 +1,6 @@
 eksctl utils associate-iam-oidc-provider \
     --region us-east-1 \
-    --cluster expense \
+    --cluster expense-project \
     --approve
 
 ---
@@ -11,7 +11,7 @@ aws iam create-policy \
 ---
 
 eksctl create iamserviceaccount \
---cluster=expense \
+--cluster=expense-project \
 --namespace=kube-system \
 --name=aws-load-balancer-controller \
 --attach-policy-arn=arn:aws:iam::315069654700:policy/AWSLoadBalancerControllerIAMPolicy \
